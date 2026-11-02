@@ -1,0 +1,16 @@
+<footer>
+  <p>
+    &copy; {{ site.Params.footer.since }}{{ if ne (string site.Params.footer.since) (now.Format "2006") }}-{{ now.Format "2006" }}{{ end }} {{ site.Copyright }}
+  </p>
+  <p>
+    {{- range site.Params.social_media.items }}{{ if .enabled }}
+    <a href="{{ .link }}" target="_blank" rel="noopener">[{{ .title }}]</a>
+    {{- end }}{{ end }}
+    {{- with site.Params.author.email }}
+    <a href="mailto:{{ . }}">[Email]</a>
+    {{- end }}
+  </p>
+  {{- if site.Params.footer.poweredby }}
+  <p class="dim">{{ i18n "poweredBy" }} <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
+  {{- end }}
+</footer>

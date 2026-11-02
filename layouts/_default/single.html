@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article>
+  <h2>--- {{ .Title }} ---</h2>
+  {{- if eq .Type site.Params.contentTypeName }}
+  <p class="meta">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+    &middot; {{ i18n "readingTime" .ReadingTime }}
+    {{- with .Params.tags }} &middot;
+      {{- range . }} <a href="{{ (printf "tags/%s" (. | urlize)) | relLangURL }}">#{{ . }}</a>{{ end }}
+    {{- end }}
+  </p>
+  {{- end }}
+  <div class="content">
+    {{ .Content }}
+  </div>
+  {{- if eq .Type site.Params.contentTypeName }}
+  <nav class="pager">
+    {{- with .PrevInSection }}<a href="{{ .RelPermalink }}">[&larr; {{ .Title }}]</a>{{ end }}
+    <a href="{{ site.Home.RelPermalink }}">[{{ i18n "backHome" }}]</a>
+    {{- with .NextInSection }}<a href="{{ .RelPermalink }}">[{{ .Title }} &rarr;]</a>{{ end }}
+  </nav>
+  {{ partial "comments.html" . }}
+  {{- end }}
+</article>
+{{ end }}

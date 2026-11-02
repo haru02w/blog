@@ -1,0 +1,24 @@
+[posts]
+other = "Posts"
+
+[noPosts]
+other = "Nada por aqui ainda. Volte em breve!"
+
+[intro]
+other = "Olá, sou o <em>Haru02w</em>. Escrevo sobre as coisas que aprendo e construo: jogos, emuladores, compiladores, sistemas operacionais e <em>tudo mais que despertar minha curiosidade</em>."
+
+[introHint]
+other = "Cada post abaixo vale uma estrela."
+
+[readingTime]
+one = "{{ .Count }} min de leitura"
+other = "{{ .Count }} min de leitura"
+
+[backHome]
+other = "Início"
+
+[comments]
+other = "--- Comentários ---"
+
+[poweredBy]
+other = "Feito com"

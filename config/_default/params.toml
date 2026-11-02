@@ -14,6 +14,7 @@ toc = false
 
 [author]
   name = "João Victor Millane"
+  username = "haru02w"
   email = "haru02w@protonmail.com"
 
 [header]
@@ -27,7 +28,7 @@ toc = false
 # generate configurations from https://giscus.app/
 [giscus]
   enabled = true
-  repo = "haru02w/haru02w.github.io"
+  repo = "haru02w/blog"
   repoID = "R_kgDONTuw6Q"
   category = "General"
   categoryID = "DIC_kwDONTuw6c4CkjM-"
@@ -36,7 +37,7 @@ toc = false
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "top"
-  theme = "preferred_color_scheme"
+  theme = "transparent_dark"
   lang = "en"
   loading="lazy"
 

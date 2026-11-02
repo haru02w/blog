@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article>
+  <div class="intro">
+<pre class="tux" aria-hidden="true">
+    <span class="tux-body">.--.</span>
+   <span class="tux-body">|</span><span class="tux-eye">o</span><span class="tux-beak">_</span><span class="tux-eye">o</span> <span class="tux-body">|</span>
+   <span class="tux-body">|</span><span class="tux-beak">:_/</span> <span class="tux-body">|</span>
+  <span class="tux-body">//</span>   <span class="tux-belly">\</span> <span class="tux-body">\</span>
+ <span class="tux-body">(|</span>     <span class="tux-body">| )</span>
+<span class="tux-body">/'\_</span>   <span class="tux-body">_/`\</span>
+<span class="tux-feet">\___)</span><span class="tux-body">=</span><span class="tux-feet">(___/</span></pre>
+    <div class="intro-text">
+      <p>{{ i18n "intro" | safeHTML }}</p>
+      <p class="dim">{{ i18n "introHint" }}</p>
+    </div>
+  </div>
+  <h2>--- {{ i18n "posts" }} ---</h2>
+  {{ partial "post-list.html" (where site.RegularPages "Type" site.Params.contentTypeName) }}
+</article>
+{{ end }}
