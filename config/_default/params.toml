@@ -20,10 +20,6 @@ toc = false
 [header]
   logo = "logo.svg"
 
-[footer]
-  since = 2024
-  poweredby = true
-
 # giscus is comments system powered by GitHub Discussions
 # generate configurations from https://giscus.app/
 [giscus]

@@ -5,12 +5,13 @@
   <p class="meta">
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
     &middot; {{ i18n "readingTime" .ReadingTime }}
+    <span class="chapter-progress" title="{{ i18n "starsHint" }}" hidden>&middot; <span class="star-count"><span class="chapter-earned">0</span>/<span class="chapter-total">0</span>*</span></span>
     {{- with .Params.tags }} &middot;
       {{- range . }} <a href="{{ (printf "tags/%s" (. | urlize)) | relLangURL }}">#{{ . }}</a>{{ end }}
     {{- end }}
   </p>
   {{- end }}
-  <div class="content">
+  <div class="content"{{ if eq .Type site.Params.contentTypeName }} data-chapters{{ end }}>
     {{ .Content }}
   </div>
   {{- if eq .Type site.Params.contentTypeName }}
@@ -20,6 +21,11 @@
     {{- with .NextInSection }}<a href="{{ .RelPermalink }}">[{{ .Title }} &rarr;]</a>{{ end }}
   </nav>
   {{ partial "comments.html" . }}
+  <div class="toast" role="status" hidden>
+    <button class="toast-close" type="button" aria-label="{{ i18n "close" }}">[x]</button>
+    <p class="toast-title">{{ i18n "thanksTitle" }}</p>
+    <p class="dim">{{ i18n "thanksBody" }}</p>
+  </div>
   {{- end }}
 </article>
 {{ end }}

@@ -12,16 +12,18 @@
         <li><a href="{{ "index.xml" | relLangURL }}">[RSS]</a></li>
       </ul>
     </nav>
-    <div class="user">{{ site.Params.author.username }} <span class="star-count">{{ len $posts }}*</span></div>
-  </div>
-  <div class="header-row">
-    <h1 class="title-event">&nbsp;&nbsp;<span class="title-event-wrap">int since=</span><a href="{{ site.Home.RelPermalink }}">{{ site.Params.footer.since }}</a><span class="title-event-wrap">;</span><span class="cursor">_</span></h1>
-    <nav>
-      <ul>
-        {{- range $translations }}
-        <li><a href="{{ .RelPermalink }}" hreflang="{{ .Lang }}"{{ if eq .Lang $.Lang }} class="current"{{ end }}>[{{ .Lang | upper }}]</a></li>
+    <div class="user">
+      <div>{{ site.Params.author.username }} <span class="post-count">{{ len $posts }}§</span> <span class="star-count total-stars" title="{{ i18n "starsTotal" }}" hidden>0*</span></div>
+      <div class="lang">
+        <span class="theme-switch" role="group" aria-label="{{ i18n "theme" }}" hidden>
+          <button type="button" data-theme-choice="dark" aria-label="{{ i18n "themeDark" }}" title="{{ i18n "themeDark" }}">&#x1F319;</button><span class="dim">/</span><button type="button" data-theme-choice="light" aria-label="{{ i18n "themeLight" }}" title="{{ i18n "themeLight" }}">&#x2600;&#xFE0F;</button>
+          <span class="dim">&middot;</span>
+        </span>
+        {{ range $i, $t := $translations }}
+        {{- if $i }}<span class="dim">/</span>{{ end -}}
+        <a href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}"{{ if eq .Lang $.Lang }} class="current"{{ end }}>{{ index (split .Lang "-") 0 }}</a>
         {{- end }}
-      </ul>
-    </nav>
+      </div>
+    </div>
   </div>
 </header>

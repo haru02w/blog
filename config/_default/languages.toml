@@ -1,7 +1,7 @@
 [en]
-  languageCode = 'en-US'
-  languageDirection = 'ltr'
-  languageName = 'English'
+  locale = 'en-US'
+  direction = 'ltr'
+  label = 'English'
   weight = 1
   [en.menu]
   [[en.menu.main]]
@@ -10,16 +10,10 @@
     pageRef = "post"
     weight = 10
 
-  [[en.menu.main]]
-    identifier = "about"
-    name = "About"
-    pageRef = "about"
-    weight = 20
-
 [pt-br]
-  languageCode = 'pt-BR'
-  languageDirection = 'ltr'
-  languageName = 'Português'
+  locale = 'pt-BR'
+  direction = 'ltr'
+  label = 'Português'
   weight = 2
   [pt-br.menu]
   [[pt-br.menu.main]]
@@ -27,9 +21,3 @@
     name = "post"
     pageRef = "post"
     weight = 10
-
-  [[pt-br.menu.main]]
-    identifier = "about"
-    name = "sobre"
-    pageRef = "about"
-    weight = 20

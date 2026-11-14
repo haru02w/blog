@@ -1,4 +1,4 @@
-{{- /* Renders pages like the Advent of Code calendar: one row per entry, with a star. */ -}}
+{{- /* Renders pages like the Advent of Code calendar: one row per entry, with a § mark. */ -}}
 {{- if . }}
 <ul class="calendar">
   {{- range . }}
@@ -6,7 +6,7 @@
     <a href="{{ .RelPermalink }}">
       {{- if not .Date.IsZero }}<span class="calendar-date">{{ .Date.Format "2006-01-02" }}</span>{{ end -}}
       <span class="calendar-title">{{ .Title }}</span>
-      <span class="calendar-star">*</span>
+      <span class="calendar-mark">§</span>
     </a>
   </li>
   {{- end }}

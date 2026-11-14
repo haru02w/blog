@@ -3,7 +3,7 @@ title = "Blog02w"
 author = "Haru02w"
 copyright = "João Victor Millane"
 pagination.pagerSize = 10
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
